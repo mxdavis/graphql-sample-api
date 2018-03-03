@@ -16,7 +16,7 @@ Types::PostType = GraphQL::ObjectType.define do
   field :user, Types::UserType
 
   field :errors, types[types.String], "Reasons this object could not be saved" do
-  resolve ->(obj, _, _) {obj.errors.to_a}
-end
+    resolve ->(obj, _, _) {obj.errors.to_a}
+  end
 
 end
