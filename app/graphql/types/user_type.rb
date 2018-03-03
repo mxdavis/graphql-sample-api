@@ -1,3 +1,17 @@
+Types::UserInputType = GraphQL::InputObjectType.define do
+  name "UserInputType"
+  description "Properties for creating or updating a User"
+
+  argument :id, types.ID
+  argument :first_name, types.String
+  argument :last_name, types.String
+  argument :street, types.String
+  argument :number, types.Int
+  argument :city, types.String
+  argument :postcode, types.Int
+  argument :country, types.String
+end
+
 Types::UserType = GraphQL::ObjectType.define do
   name "UserType"
 
@@ -22,6 +36,4 @@ Types::UserType = GraphQL::ObjectType.define do
 
   field :posts, types[Types::PostType], 'A list of blog posts by the user'
   field :comments, types[Types::CommentType], 'A list of comments posted by this user'
-
-
 end
