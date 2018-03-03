@@ -36,4 +36,8 @@ Types::UserType = GraphQL::ObjectType.define do
 
   field :posts, types[Types::PostType], 'A list of blog posts by the user'
   field :comments, types[Types::CommentType], 'A list of comments posted by this user'
+
+  field :errors, types[types.String], "Reasons this object could not be saved" do
+    resolve ->(obj, _, _) {obj.errors.to_a}
+  end
 end
