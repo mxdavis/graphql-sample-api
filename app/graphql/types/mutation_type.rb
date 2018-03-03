@@ -16,4 +16,8 @@ Types::MutationType = GraphQL::ObjectType.define do
   field :createPost, function: Mutations::Posts::CreatePost.new
   field :updatePost, function: Mutations::Posts::UpdatePost.new
   field :deletePost, function: Mutations::Posts::DeletePost.new
+
+  field :createComment, function: Mutations::Comments::CreateComment.new
+  field :updateComment, function: Mutations::Comments::UpdateComment.new
+  field :deleteComment, function: Mutations::Comments::DeleteComment.new
 end
